@@ -1,1 +1,2 @@
-# ProyectoSantex
+# SantexAcademy
+Santex Academy
