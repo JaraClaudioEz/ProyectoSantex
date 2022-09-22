@@ -1,25 +1,23 @@
 /* cSpell: disable */
 const bcrypt = require('bcrypt');
-
 module.exports = {
-  up: async (queryInterface) => queryInterface.bulkInsert('users', [
+  up: async (queryInterface) => queryInterface.bulkInsert('roles', [
     {
-      username: 'example1',
-      password: await bcrypt.hash('secret', 10),
+      name: 'Admin',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      username: 'example2',
-      password: await bcrypt.hash('secret2', 10),
+      name: 'Test',
       createdAt: new Date(),
       updatedAt: new Date(),
-    },
+    }
   ]),
   down: async (queryInterface) => {
-    await queryInterface.bulkDelete('users', null, {
+    await queryInterface.bulkDelete('roles', null, {
       truncate: true,
       cascade: false,
     });
   },
 };
+
