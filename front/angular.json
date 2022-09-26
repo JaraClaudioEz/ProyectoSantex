@@ -148,7 +148,8 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
-              "src/assets/styles/_variables.scss"
+              "src/assets/styles/_variables.scss",
+              "src/muni-style.scss"
             ],
             "scripts": []
           }
