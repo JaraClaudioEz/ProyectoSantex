@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const interviewType =  sequelize.define('interviewType', {
     id:{
-      Type: DataTypes.integer(16),
+      Type: DataTypes.INTEGER(16),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
