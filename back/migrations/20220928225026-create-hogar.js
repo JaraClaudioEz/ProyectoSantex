@@ -30,24 +30,41 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now')
       },
       tipoCocinaId:{
         allowNull:true,
         type: Sequelize.INTEGER.UNSIGNED,
         reference:{model: 'tipoCocina', key: 'id'}
+      },
+      tipoBañoId:{
+        allowNull:true,
+        type:Sequelize.INTEGER.UNSIGNED,
+        reference:{model: 'tipoBaño', key: 'id'}
       }
     });
-    return queryInterface.addConstraint('hogares',{
+    queryInterface.addConstraint('hogares',{
       fields: ['tipoCocinaId'],
       type: 'foreign key',
       name: 'tipo_cocina_fkey',
       references:{
         table: 'tipoCocinas',
+        field: 'id'
+      },
+      onUpdate: 'cascade'
+    });
+    return queryInterface.addConstraint('hogares',{
+      fields: ['tipoBañoId'],
+      type: 'foreign key',
+      name: 'tipo_baño_fkey',
+      references:{
+        table: 'tipoBaños',
         field: 'id'
       },
       onUpdate: 'cascade'
