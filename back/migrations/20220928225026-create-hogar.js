@@ -28,6 +28,30 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: true
       },
+      isLavadero:{
+        type: Sequelize.BOOLEAN,
+        allowNull: true
+      },
+      isGaraje:{
+        type: Sequelize.BOOLEAN,
+        allowNull: true
+      },
+      isDormir:{
+        type: Sequelize.BOOLEAN,
+        allowNull: true
+      },
+      idParaDormir:{
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
+      isTrabajo2: {
+        type: Sequelize.BOOLEAN,
+        allowNull: true
+      },
+      isParaTrabajo2:{
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -42,6 +66,15 @@ module.exports = {
         allowNull:true,
         type: Sequelize.INTEGER.UNSIGNED,
         reference:{model: 'tipoCocina', key: 'id'}
+      },
+      tipoCocinaOtro:{
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      tipoHogarId:{
+        allowNull: true,
+        type: Sequelize.INTEGER.UNSIGNED,
+        reference: {model: 'tipoHogar', key: 'id'}
       },
       tipoBañoId:{
         allowNull:true,
@@ -59,6 +92,15 @@ module.exports = {
       },
       onUpdate: 'cascade'
     });
+    queryInterface.addConstraint('hogares', {
+      fields: ['tipoHogarId'],
+      type: 'foreign key',
+      name: 'tipo_hogar_fkey',
+      references:{
+        table: 'tipoHogar',
+        field: 'id'
+      },
+      onUpdate: 'cascade'    })
     return queryInterface.addConstraint('hogares',{
       fields: ['tipoBañoId'],
       type: 'foreign key',
