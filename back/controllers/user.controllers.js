@@ -34,7 +34,19 @@ async function userInfo(req, res, next) {
   }
 }
 
+async function register(req, res, next) {
+  try {
+    const { username, password } = req.body;
+    const user = await userProvider.register(username, password);
+
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   login,
   userInfo,
+  register,
 };

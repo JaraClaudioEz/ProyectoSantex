@@ -19,4 +19,10 @@ app.get('/myInfo', [
 ],
 userController.userInfo);
 
+app.post('/register', [
+  UserValidator.validate('register'),
+  Validator.checkValidationResult,
+],
+userController.register);
+
 module.exports = app;
