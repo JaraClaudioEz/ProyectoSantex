@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     tableName: 'users',
   });
-  user.tipousuario = user.belongTo(tipousuario);
+  //user.tipousuario = user.belongTo(tipousuario);
 
   return user;
 };
