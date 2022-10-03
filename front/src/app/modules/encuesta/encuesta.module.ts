@@ -13,12 +13,14 @@ import { DashboardModule } from '../dashboard/dashboard.module';
 import { EncuestaRoutingModule } from './encuesta-routing.module';
 import { HogarComponent } from './hogar-page/hogar.component';
 import { IndividuoComponent } from './individuo-page/individuo.component';
+import { MainComponent } from './main-page/main.component';
 
 
 @NgModule({
   declarations: [
     HogarComponent,
-    IndividuoComponent
+    IndividuoComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
