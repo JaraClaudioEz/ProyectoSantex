@@ -1,19 +1,19 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const interviewType =  sequelize.define('interviewType', {
-    id:{
-      type: DataTypes.INTEGER(16),
+  const tipoTrabajo = sequelize.define('tipoTrabajo' , {
+    id: {
       allowNull: false,
+      autoincremental: true,
       primaryKey: true,
-      autoIncrement: true
+      type: DataTypes.INTEGER(16)
     },
-    tipoEntrevista:{
+    tipoTrabajo:{
       type: DataTypes.STRING(255),
       allowNull: false
     }
   },{
     timestamp: true,
-    tablename: 'interviewType'
+    tablename: 'tipoTrabajo'
   });
-  return interviewType;
+  return tipoTrabajo;
 };
