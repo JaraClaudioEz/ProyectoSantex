@@ -25,6 +25,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/dog/dog.module').then(m => m.DogModule),
   },
   {
+    path: 'encuesta',
+    canActivate: [LoggedInGuard],
+    loadChildren: () => import('./modules/encuesta/encuesta.module').then(m => m.EncuestaModule),
+  },
+  {
     path: '**',
     redirectTo: 'auth/login'
   }
