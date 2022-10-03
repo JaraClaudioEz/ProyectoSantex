@@ -10,48 +10,60 @@ module.exports = {
       },
       habitaciones: {
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        comment: 'numero de habitaciones'
       },
       habitacionesParaDormir:{
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        comment: 'cuantas habitaciones se usan para dormir'
       },
       isTrabajo:{
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        comment: 'alguna se utiliza para trabajar?'
       },
       habitacionesParaTrabajar:{
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        comment: 'cuantas se usan para trabajar?'
       },
       isCocina:{
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        comment: 'tiene cuarto de cocina?'
       },
       isLavadero:{
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        comment: 'tiene lavadero?'
       },
       isGaraje:{
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        comment: 'tiene garaje?'
       },
       isDormir:{
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        comment: 'de baño/lavadero/garaje usa alguno para dormir?'
       },
       idParaDormir:{
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        comment: 'cuantos?'
       },
       isTrabajo2: {
         type: Sequelize.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        comment: 'de baño/lavadero/garaje usa alguno para trabajar?'
       },
       isParaTrabajo2:{
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: true,
+        comment: 'cuantos?'
       },
+      
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -65,11 +77,13 @@ module.exports = {
       tipoCocinaId:{
         allowNull:true,
         type: Sequelize.INTEGER.UNSIGNED,
-        reference:{model: 'tipoCocina', key: 'id'}
+        reference:{model: 'tipoCocina', key: 'id'},
+        comment: 'tipo de cocina'
       },
       tipoCocinaOtro:{
         type: Sequelize.STRING,
         allowNull: true,
+        comment:'por si tipo de cocina es otros'
       },
       tipoHogarId:{
         allowNull: true,
@@ -79,7 +93,8 @@ module.exports = {
       tipoBañoId:{
         allowNull:true,
         type:Sequelize.INTEGER.UNSIGNED,
-        reference:{model: 'tipoBaño', key: 'id'}
+        reference:{model: 'tipoBaño', key: 'id'},
+        comment: 'tipo de baño'
       }
     });
     queryInterface.addConstraint('hogares',{
