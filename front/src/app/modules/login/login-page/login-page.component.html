@@ -28,6 +28,9 @@
         <mat-error *ngIf="loginForm.controls.password?.errors?.minlength">
           La cantidad mínima de caracteres es 5.
         </mat-error>
+        <mat-error *ngIf="loginForm.controls.password?.errors?.wrong">
+          La contraseña ingresada es incorrecta.
+        </mat-error>
       </mat-form-field>
       <a mat-raised-button routerLink="/auth/register">Registrar</a>
       <button mat-raised-button color="primary">Login</button>
