@@ -28,7 +28,8 @@ module.exports = {
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.fn('now')
+        defaultValue: Sequelize.fn('now'),
+        comment: 'adasd'
       },
     }),
 
